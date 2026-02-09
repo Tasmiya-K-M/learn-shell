@@ -45,11 +45,14 @@ echo -e "\e[33menable and restart the service\e[0m"
 systemctl enable user &>> /tmp/roboshop.log
 systemctl restart user 
 
-setup MongoDB repo
+#setup MongoDB repo
+echo -e "\e[33msetup MongoDB repo\e[0m"
 cp /home/centos/learn-shell/mongo-client.repo /etc/yum.repos.d/
 
 #Installing Mongo client
+echo -e "\e[33mInstalling Mongo cliento\e[0m"
 dnf install mongodb-org-shell -y &>> /tmp/roboshop.log
 
 #Load the data into mongodb using mongo-client
+echo -e "\e[33mLoad the data into mongodb using mongo-client\e[0m"
 mongo --host mongodb-dev.devopspro789.online </app/schema/user.js &>> /tmp/roboshop.log

@@ -1,3 +1,6 @@
+echo -e "\e[33msetting the hostname\e[0m"
+hostnamectl set-hostname user
+
 # disable the default nodejs and enable the nodejs 18
 echo -e "\e[33mdisable the default nodejs and enable the nodejs 18\e[0m"
 dnf module disable nodejs -y &>> /tmp/roboshop.log
@@ -9,7 +12,7 @@ dnf install nodejs -y &>> /tmp/roboshop.log
 
 #create user
 echo -e "\e[33mcreate user\e[0m"
-useradd roboshop
+useradd roboshop &>> /tmp/roboshop.log
 
 #create the directory
 echo -e "\e[33mcreate the directory\e[0m"
@@ -41,3 +44,12 @@ systemctl daemon-reload
 echo -e "\e[33menable and restart the service\e[0m"
 systemctl enable user &>> /tmp/roboshop.log
 systemctl restart user 
+
+setup MongoDB repo
+cp /home/centos/learn-shell/mongo-client.repo /etc/yum.repos.d/
+
+#Installing Mongo client
+dnf install mongodb-org-shell -y &>> /tmp/roboshop.log
+
+#Load the data into mongodb using mongo-client
+mongo --host mongodb-dev.devopspro789.online </app/schema/user.js &>> /tmp/roboshop.log

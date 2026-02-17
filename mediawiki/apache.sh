@@ -10,6 +10,7 @@ tar -xf /tmp/mediawiki-1.45.1.tar.gz &>> /var/log/mediawiki.log
 echo installing apache
 yum install httpd -y &>> /var/log/mediawiki.log
 
+rm -rf mediawiki
 mv mediawiki-1.45.1 mediawiki
 rm -rf /var/www/html/*
 cp -r mediawiki /var/www/html/

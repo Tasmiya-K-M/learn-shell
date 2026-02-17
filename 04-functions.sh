@@ -20,4 +20,5 @@ exit_sample_demo() {
     return 
     echo hello
 }
+exit_sample_demo
 echo exit status of exit_sample_demo - $?

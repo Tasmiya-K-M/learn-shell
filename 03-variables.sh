@@ -14,3 +14,7 @@ echo $sum
 
 # print today date
 today_date=$(date)
+
+# echo has special charater, use quotes
+# signal quote with echo - print the statement
+# double quote with echo - substitute the value and print the statement

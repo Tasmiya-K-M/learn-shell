@@ -42,6 +42,11 @@ ping other server from ansible server using user and password
     for specific group --> ansible -i /tmp/inv group_name -m ping -e ansible_user=user -e ansible_password=password
 
 2. How ansible manages the node configuration?
-    Earlier Modules , latest Collections(group of module) , using ansible playbook (YAML Markup language)
+    Earlier Modules , latest Collections(group of module) 
+
+3. How ansible handles ?
+    Install Collections, File Collections, Service Collections ----> Ansible playbook
     
+
+
 
